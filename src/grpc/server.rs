@@ -7,8 +7,8 @@ use sea_orm::DatabaseConnection;
 use tokio::sync::{mpsc, Mutex};
 use tokio_stream::wrappers::UnboundedReceiverStream;
 use tonic::{Request, Response, Status};
-use crate::gateway::gateway_server::Gateway;
-use crate::gateway::{NodesOverviewResponse, NodeDetailResponse, MessageDetailResponse, NodeId, MessageId, Node, MessageInfo};
+use crate::grpc::gateway::gateway_server::Gateway;
+use crate::grpc::gateway::{NodesOverviewResponse, NodeDetailResponse, MessageDetailResponse, NodeId, MessageId, Node, MessageInfo};
 use crate::entities::{prelude::*, *};
 use sea_orm::*;
 use crate::db::get_conn;
@@ -109,9 +109,16 @@ async fn message_detail(&self, request: Request<MessageId>) -> Result<Response<M
         None => return Err(Status::invalid_argument(NODE_NOT_EXIST_ERR))
     }
 
+    let clock_obj: HashMap<String, Value> = message.clock.as_object().unwrap().iter().map(|(k, v)| (k.clone(), v.clone())).collect();
+    let node_id = clock_obj.keys().next().unwrap().to_string();
+    let count = clock_obj.values().next().unwrap().to_string();
+    let count: i32 = count.parse().unwrap();
+    let mut clock: HashMap<String, i32> = HashMap::new();
+    clock.insert(node_id,count);
+
     let res = MessageDetailResponse {
         message_id: message.message_id.clone(),
-        clock: Default::default(),
+        clock,
         event_count: message.event_count.clone(),
         is_zk: message.is_zk.clone(),
         from_addr: message.from_addr.unwrap().clone(),

@@ -1,17 +1,12 @@
-mod db;
-
-mod server;
-pub mod gateway;
-pub mod entities;
-
 use tonic::transport::Server;
 
-use server::GatewayResponse;
-use gateway::gateway_server::GatewayServer;
-use crate::db::get_conn;
+use gateway::grpc::gateway::gateway_server::GatewayServer;
+use gateway::server::GatewayResponse;
+
+
 
 mod store_proto {
-    include!("gateway.rs");
+    include!("../gateway.rs");
 
     pub(crate) const FILE_DESCRIPTOR_SET: &[u8] =
         tonic::include_file_descriptor_set!("store_descriptor");
