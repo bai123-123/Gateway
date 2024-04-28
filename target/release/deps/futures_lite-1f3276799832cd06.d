@@ -1,0 +1,11 @@
+/Users/rongbaizhang/RustroverProjects/gateway/target/release/deps/libfutures_lite-1f3276799832cd06.rmeta: /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/lib.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/future.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/prelude.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/stream.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/io.rs
+
+/Users/rongbaizhang/RustroverProjects/gateway/target/release/deps/libfutures_lite-1f3276799832cd06.rlib: /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/lib.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/future.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/prelude.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/stream.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/io.rs
+
+/Users/rongbaizhang/RustroverProjects/gateway/target/release/deps/futures_lite-1f3276799832cd06.d: /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/lib.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/future.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/prelude.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/stream.rs /Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/io.rs
+
+/Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/lib.rs:
+/Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/future.rs:
+/Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/prelude.rs:
+/Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/stream.rs:
+/Users/rongbaizhang/.cargo/registry/src/rsproxy.cn-0dccff568467c15b/futures-lite-2.3.0/src/io.rs:
