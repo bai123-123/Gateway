@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use gateway::db::get_conn;
 use gateway::entities::node_info;
-use gateway::gateway::{MessageDetailResponse, MessageInfo, Node, NodeDetailResponse, NodesOverviewResponse};
+use gateway::restful::response::{MessageDetailResponse, MessageInfo, Node, NodeDetailResponse, NodesOverviewResponse};
 use gateway::entities::{prelude::*, *};
 use axum::{
     response::Html,
@@ -11,10 +11,9 @@ use axum::{
 };
 use axum::handler::Handler;
 use axum::extract::Path;
-use axum::handler;
-use serde::{Deserialize, Serialize};
+use http::HeaderValue;
+use tower_http::cors::{AllowHeaders, AllowMethods, AllowOrigin, Any, CorsLayer};
 use serde_json::Value;
-use tonic::{Response, Status};
 use sea_orm::*;
 
 async fn get_nodes_info() -> Result<Json<NodesOverviewResponse>, StatusCode> {
@@ -120,13 +119,21 @@ async fn handler() -> Html<&'static str> {
 async fn main() {
     dotenv::dotenv().ok();
 
+    let cors = CorsLayer::new()
+        .allow_methods(Any)
+        .allow_origin(AllowOrigin::list([
+            "http://0.0.0.0:8080".parse::<HeaderValue>().unwrap(),
+            "http://52.221.181.98:8080".parse::<HeaderValue>().unwrap(),
+        ]))
+        .allow_headers([http::header::AUTHORIZATION]);
+
     let app = Router::new()
         .nest(
             "/gateway",
             Router::new()
                 .route("/overview", get(get_nodes_info))
                 .route("/node/:id", get(get_node_by_id))
-                .route("/message/:id", get(get_message_by_id)),
+                .route("/message/:id", get(get_message_by_id)).layer(cors)
         );
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:8080").await.unwrap();

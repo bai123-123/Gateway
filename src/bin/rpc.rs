@@ -6,7 +6,7 @@ use gateway::server::GatewayResponse;
 
 
 mod store_proto {
-    include!("../gateway.rs");
+    include!("../grpc/gateway.rs");
 
     pub(crate) const FILE_DESCRIPTOR_SET: &[u8] =
         tonic::include_file_descriptor_set!("store_descriptor");

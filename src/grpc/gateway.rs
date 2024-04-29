@@ -1,7 +1,5 @@
-use serde::{Serialize, Deserialize};
-
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Node {
     #[prost(string, tag = "1")]
     pub node_id: ::prost::alloc::string::String,
@@ -11,7 +9,7 @@ pub struct Node {
     pub is_alive: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NodesOverviewResponse {
     #[prost(message, repeated, tag = "1")]
     pub nodes: ::prost::alloc::vec::Vec<Node>,
@@ -21,13 +19,13 @@ pub struct NodesOverviewResponse {
     pub total_message_count: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NodeId {
     #[prost(string, tag = "1")]
     pub node_id: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MessageInfo {
     #[prost(string, tag = "1")]
     pub message_id: ::prost::alloc::string::String,
@@ -37,7 +35,7 @@ pub struct MessageInfo {
     pub to_addr: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NodeDetailResponse {
     #[prost(string, tag = "1")]
     pub node_id: ::prost::alloc::string::String,
@@ -49,13 +47,13 @@ pub struct NodeDetailResponse {
     pub message_list: ::prost::alloc::vec::Vec<MessageInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MessageId {
     #[prost(string, tag = "1")]
     pub message_id: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message,Serialize, Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MessageDetailResponse {
     #[prost(string, tag = "1")]
     pub message_id: ::prost::alloc::string::String,

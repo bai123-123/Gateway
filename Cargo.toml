@@ -17,7 +17,11 @@ tonic-reflection = "0.6.0"
 serde_json = "1.0.116"
 axum = { version = "0.7.5" }
 axum-extra = { version = "0.9", features = ["typed-header"] }
+axum_cors = "0.1.4"
 serde = { version = "1.0.198", features = ["derive"] }
+http = "1.1.0"
+tower-http = { version = "0.5.2", features = ["cors"] }
+
 [build-dependencies]
 tonic-build = "0.8"
 
