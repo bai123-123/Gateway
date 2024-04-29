@@ -119,7 +119,13 @@ async fn handler() -> Html<&'static str> {
 async fn main() {
     dotenv::dotenv().ok();
 
-    let cors = CorsLayer::new().allow_any_origin();
+    let cors = CorsLayer::new()
+        .allow_methods(Any)
+        .allow_origin(AllowOrigin::list([
+            "http://0.0.0.0:8080".parse::<HeaderValue>().unwrap(),
+            "http://52.221.181.98:8080".parse::<HeaderValue>().unwrap(),
+        ]))
+        .allow_headers([http::header::AUTHORIZATION]);
 
     let app = Router::new()
         .nest(
